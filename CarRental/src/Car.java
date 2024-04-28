@@ -18,7 +18,7 @@ public class Car implements Serializable {
     private int numberOfDoors; //atrybut prosty
     private int rentCost; //atrybut prosty | per day
     private LocalDate dateOfCreation; //atrybut złożony
-    private int idCar;
+    private int idCar; //atrybut prosty
     private static int id = 0;
 
     public Car(String brand, String model, int yearOfManufacture, int numberOfDoors, int rentCost) {

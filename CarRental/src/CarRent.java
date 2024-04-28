@@ -54,9 +54,9 @@ public class CarRent <T extends Person> implements Serializable {
     public String toString() {
         return "Start date of rent=" + startDateOfRent +
                 ", end date=" + endDateOfRent + "\n" +
-                ", rented car=" + rentedCar + "\n" +
-                ", renter=" + renter.getName() + renter.getSurname() + "\n" +
-                ", totalCost=" + totalCost;
+                "rented car=" + rentedCar + "\n" +
+                "renter=" + renter.getName() + " " + renter.getSurname() + "\n" +
+                "totalCost=" + totalCost;
     }
 
     public static void writeExtent(ObjectOutputStream stream) throws IOException {

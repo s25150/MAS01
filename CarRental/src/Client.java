@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 
 public class Client extends Person implements Serializable {
     private static List<Client> extent = new ArrayList<>(); //ekstensja klasy
-    private List<String> likedBrands = new ArrayList<>(); //atrybut złożony, opcjonalny
+    private List<String> likedBrands = new ArrayList<>(); //atrybut powtarzalny, opcjonalny
     private int idClient;
     private static int id = 0;
 
@@ -46,11 +46,15 @@ public class Client extends Person implements Serializable {
     }
 
     public void getLikedBrands() {
-        System.out.println("Liked brands of " + this.getName() + ": ");
-        for(String s : likedBrands){
-            System.out.print(s + " ");
+        if(likedBrands.isEmpty()){
+            System.out.println(this.getName() + " has 0 liked brands");
+        }else {
+            System.out.println("Liked brands of " + this.getName() + ": ");
+            for (String s : likedBrands) {
+                System.out.print(s + " ");
+            }
+            System.out.println();
         }
-        System.out.println();
     }
 
     //metoda klasowa
@@ -79,7 +83,7 @@ public class Client extends Person implements Serializable {
         return "ClientId= " + getIdClient() +
                 ", name= " + getName() +
                 ", surname= " + getSurname() +
-                ", age= " + getAge();
+                ", age= " + getAge(getBirthDate());
     }
 
     public static void writeExtent(ObjectOutputStream stream) throws IOException {

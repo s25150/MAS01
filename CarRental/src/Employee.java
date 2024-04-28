@@ -52,7 +52,7 @@ public class Employee extends Person implements Serializable {
         return "EmployeeId= " + getIdEmployee() +
                 ", name= " + getName() +
                 ", surname= " + getSurname() +
-                ", age= " + getAge();
+                ", age= " + getAge(getBirthDate());
     }
 
     public static void writeExtent(ObjectOutputStream stream) throws IOException {

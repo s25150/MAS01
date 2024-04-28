@@ -28,7 +28,7 @@ public class Main {
         Client.showExtent();
         Employee.showExtent();
 
-        CarRent<Client> carrent1 = new CarRent<>(LocalDate.of(2002, 12, 11),LocalDate.of(2002, 12, 15), car1, client3);
+        CarRent<Client> carrent1 = new CarRent<>(LocalDate.of(2002, 12, 11),LocalDate.of(2002, 12, 15), car1, client2);
         CarRent<Client> carrent2 = new CarRent<>(LocalDate.of(2023, 6, 23),LocalDate.of(2002, 6, 24), car2, client2);
         CarRent<Employee> carrent3 = new CarRent<>(LocalDate.of(2002, 12, 11),LocalDate.of(2002, 12, 15), car1, emp1);
 

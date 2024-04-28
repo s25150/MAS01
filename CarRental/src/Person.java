@@ -12,21 +12,21 @@ public class Person implements Serializable {
     private String name; //atrybut prosty
     private String surname; //atrybut prosty
     private LocalDate birthDate; //atrybut złożony
-    private int age; //atrybut pochodny
-    protected Double discount; //atrybut złożony
+    protected Double discount; //atrybut prosty
 
-    private int idPerson;
+    private int idPerson; //atrybut prosty
     private static int id = 0;
 
     protected Person(String name, String surname, LocalDate birthDate) {
         this.name = name;
         this.surname = surname;
         this.birthDate = birthDate;
-        this.age = calculateAge(birthDate);
         this.idPerson = ++id;
         addPerson(this);
     }
-    private int calculateAge(LocalDate birthDate){
+
+    //atrybut pochodny
+    public int getAge(LocalDate birthDate){
         LocalDate currentDate = LocalDate.now();
         return Period.between(birthDate, currentDate).getYears();
     }
@@ -60,10 +60,6 @@ public class Person implements Serializable {
         return birthDate;
     }
 
-    public int getAge() {
-        return age;
-    }
-
     public Double getDiscount() {
         return discount;
     }
@@ -84,7 +80,7 @@ public class Person implements Serializable {
         return "PersonId= " + idPerson +
                 ", name= " + name +
                 ", surname= " + surname +
-                ", age= " + age;
+                ", age= " + getAge(birthDate);
     }
 
     public static void writeExtent(ObjectOutputStream stream) throws IOException {
